@@ -1,7 +1,7 @@
 
-### Author : MBK Bhandari (https://www.linkedin.com/in/mbk-9852/)
+### Author : MBK Bhandari ( https://www.linkedin.com/in/mbk-9852/ )
 
-# laravel-Api-With-Passport
+# Laravel-Api-With-Passport
 
 Laravel API with Passport Authentication This repository contains a sample API built with Laravel, showcasing how to implement OAuth2 authentication using Laravel Passport. The project includes user registration, login, and secured endpoints accessible only with valid tokens.
 
@@ -51,7 +51,7 @@ Laravel API with Passport Authentication This repository contains a sample API b
 7. Serve the application:
     ```bash
     php artisan passport:install
-    
+
 8. Serve the application:
     ```bash
     php artisan serve

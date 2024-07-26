@@ -27,6 +27,10 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 
 Route::middleware('auth:api')->group(function () {
+    Route::get('/profile', [AuthController::class, 'showProfile'])->name('showProfile');
+    Route::put('/profile-update', [AuthController::class, 'updateProfile'])->name('updateProfile');
+    Route::post('/profile-delete', [AuthController::class, 'deleteAccount'])->name('deleteAccount');
+    
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::apiResource('posts', PostController::class);
 });
