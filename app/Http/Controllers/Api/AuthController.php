@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Events\UserCreated;
 use App\Helpers\ApiResponse;
 use App\Helpers\MediaHelper;
 use App\Http\Controllers\Controller;
@@ -77,7 +78,8 @@ class AuthController extends Controller
                 'user' => $user,
                 'token' => $token
             ];
-
+            // Fire this event to sent admin notification.
+            event(new UserCreated($user));
             // Return successful response
             return $this->apiResponse->sendSuccessResponse($userData, 'User registered successfully.');
         } catch (Exception $e) {

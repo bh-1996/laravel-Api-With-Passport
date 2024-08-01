@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Events\PostCreated;
 use App\Helpers\ApiResponse;
 use App\Helpers\MediaHelper;
 use App\Http\Controllers\Controller;
@@ -105,6 +106,7 @@ class PostController extends Controller
                 'image_url' => asset('images/' . $imagePath),
                 'post' => $post
             ];
+            event(new PostCreated($post));
 
             // Return successful response
             return $this->apiResponse->sendSuccessResponse($data, 'Post created successfully.');
